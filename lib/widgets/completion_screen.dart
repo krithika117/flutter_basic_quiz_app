@@ -12,31 +12,29 @@ class CompletionScreen extends StatelessWidget {
         ? 'Better luck next time :('
         : 'Congratulations! You did well!';
     final String imagePath =
-        (score < 2) ? 'assets/images/sad.gif' : 'assets/images/done.gif';
+        (score < 3) ? 'assets/images/sad.gif' : 'assets/images/done.gif';
 
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        const Text(
-          'Results',
-          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-        ),
-        const SizedBox(height: 16),
-        Image.asset(imagePath, width: 200),
-        const SizedBox(height: 16),
-        Text(
-          'Score: $score',
-          style: const TextStyle(fontSize: 18),
-        ),
-        const SizedBox(height: 16),
-        Text(
-          message,
-          style: const TextStyle(fontSize: 18),
-        ),
-        const SizedBox(height: 32),
-      ],
+    return Center(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          const Text(
+            'Results',
+            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+          ),
+          Image.asset(imagePath, width: 200),
+          const SizedBox(height: 8),
+          Text(
+            'Score: $score',
+            style: const TextStyle(fontSize: 18),
+          ),
+          const SizedBox(height: 8),
+          Text(
+            message,
+            style: const TextStyle(fontSize: 18),
+          ),
+        ],
+      ),
     );
   }
 }
