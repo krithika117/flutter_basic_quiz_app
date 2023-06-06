@@ -13,9 +13,12 @@ class AnswerWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () => answerQuestion(answerIndex),
-      child: Text(answerText),
+    return Container(
+      margin: const EdgeInsets.only(top: 4.0, bottom: 4.0),
+      child: ElevatedButton(
+        onPressed: () => answerQuestion(answerIndex),
+        child: Text(answerText),
+      ),
     );
   }
 }
